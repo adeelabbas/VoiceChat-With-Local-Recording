@@ -1,0 +1,36 @@
+PODS:
+  - AGEVideoLayout (1.0.4)
+  - AgoraAudio_iOS (4.1.1):
+    - AgoraAudio_iOS/AIAEC (= 4.1.1)
+    - AgoraAudio_iOS/AINS (= 4.1.1)
+    - AgoraAudio_iOS/AudioBeauty (= 4.1.1)
+    - AgoraAudio_iOS/DRM (= 4.1.1)
+    - AgoraAudio_iOS/RtcBasic (= 4.1.1)
+    - AgoraAudio_iOS/SpatialAudio (= 4.1.1)
+  - AgoraAudio_iOS/AIAEC (4.1.1)
+  - AgoraAudio_iOS/AINS (4.1.1)
+  - AgoraAudio_iOS/AudioBeauty (4.1.1)
+  - AgoraAudio_iOS/DRM (4.1.1)
+  - AgoraAudio_iOS/RtcBasic (4.1.1)
+  - AgoraAudio_iOS/SpatialAudio (4.1.1)
+  - Loggerithm (1.5)
+
+DEPENDENCIES:
+  - AGEVideoLayout (~> 1.0.2)
+  - AgoraAudio_iOS (= 4.1.1)
+  - Loggerithm (~> 1.5)
+
+SPEC REPOS:
+  trunk:
+    - AGEVideoLayout
+    - AgoraAudio_iOS
+    - Loggerithm
+
+SPEC CHECKSUMS:
+  AGEVideoLayout: a0122fa3fde4fac227b08da8bee0c3fe8de1682c
+  AgoraAudio_iOS: 2bab53167bb56fca18bdce2ce8952b08343aeeeb
+  Loggerithm: bc4867ea191ca9392ef09b148c2cf07256b5190c
+
+PODFILE CHECKSUM: 01cde4e93ddc0819a7294897f077f0d3a8cc4739
+
+COCOAPODS: 1.11.2
