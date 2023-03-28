@@ -1,10 +1,3 @@
-//
-//  UITypeAlias.swift
-//  APIExample
-//
-//  Created by CavanSu on 2020/5/26.
-//  Copyright © 2020 Agora Corp. All rights reserved.
-//
 
 #if os(iOS)
 import UIKit

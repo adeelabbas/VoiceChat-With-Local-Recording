@@ -1,10 +1,3 @@
-//
-//  JoinChannelAudioMain.swift
-//  APIExample
-//
-//  Created by ADMIN on 2020/5/18.
-//  Copyright © 2020 Agora Corp. All rights reserved.
-//
 
 import UIKit
 import AgoraRtcKit

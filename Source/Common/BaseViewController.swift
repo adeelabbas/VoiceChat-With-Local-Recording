@@ -1,22 +1,10 @@
-//
-//  BaseVC.swift
-//  APIExample
-//
-//  Created by 张乾泽 on 2020/4/17.
-//  Copyright © 2020 Agora Corp. All rights reserved.
-//
 
 import UIKit
 import AGEVideoLayout
 
-
 class BaseViewController: AGViewController {
     var configs: [String:Any] = [:]
     override func viewDidLoad() {
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show Log",
-//                                                                 style: .plain,
-//                                                                 target: self,
-//                                                                 action: #selector(showLog))
         LogUtils.removeAll()
     }
     

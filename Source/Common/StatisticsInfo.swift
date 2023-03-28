@@ -1,10 +1,3 @@
-//
-//  MediaInfo.swift
-//  OpenVideoCall
-//
-//  Created by GongYuhua on 4/11/16.
-//  Copyright © 2016 Agora. All rights reserved.
-//
 
 import Foundation
 import AgoraRtcKit

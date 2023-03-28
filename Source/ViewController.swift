@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  APIExample
-//
-//  Created by 张乾泽 on 2020/4/16.
-//  Copyright © 2020 Agora Corp. All rights reserved.
-//
 
 import UIKit
 

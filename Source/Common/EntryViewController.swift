@@ -1,10 +1,3 @@
-//
-//  WelcomeViewController.swift
-//  APIExample
-//
-//  Created by 张乾泽 on 2020/7/22.
-//  Copyright © 2020 Agora Corp. All rights reserved.
-//
 
 import Foundation
 import UIKit

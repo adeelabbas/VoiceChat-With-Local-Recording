@@ -14,10 +14,10 @@
             filePath = "Source/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "ViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,40 +30,100 @@
             filePath = "Source/Common/EntryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "EntryViewController"
+            landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - 5fcbb48a88a2dff7"
+                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - d653f91b1342ba97"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.note.getter : Swift.String"
                   moduleName = "VoiceChat-With-Local-Recording"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "124">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "100">
                </Location>
                <Location
-                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - 5fcbb48a88a2dff7"
+                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - 70c82bd98a6d0a83"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.note.setter : Swift.String"
                   moduleName = "VoiceChat-With-Local-Recording"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
                   offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - b90422e10c330e92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.note.modify : Swift.String"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - 435c9cfb5931f682"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.note.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - 5e22438f9893815b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; VoiceChat_With_Local_Recording.EntryViewController"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "B6E7E732-9088-4866-9DCF-D1392FD710C4 - a8c766abcb6b0d9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;VoiceChat_With_Local_Recording.EntryViewController&gt;"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "192">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -78,8 +138,8 @@
             filePath = "Source/Common/KeyCenter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "KeyCenter"
             landmarkType = "14">
          </BreakpointContent>
@@ -94,42 +154,10 @@
             filePath = "Source/Common/EntryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "doJoinPressed(sender:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AB068415-4B6C-417C-A202-08C532F47C94 - 3121525b9c6fc7e7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.doJoinPressed(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "VoiceChat-With-Local-Recording"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "472">
-               </Location>
-               <Location
-                  uuid = "AB068415-4B6C-417C-A202-08C532F47C94 - 3121525b9c6fc786"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.doJoinPressed(sender: __C.UIButton) -&gt; ()"
-                  moduleName = "VoiceChat-With-Local-Recording"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
-                  offsetFromSymbolStart = "652">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -142,8 +170,8 @@
             filePath = "Source/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
