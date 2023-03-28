@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HWc-eV-zrm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HWc-eV-zrm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,37 +41,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="151" y="226"/>
-        </scene>
-        <!--Log View Controller-->
-        <scene sceneID="prb-6k-LdD">
-            <objects>
-                <viewController storyboardIdentifier="LogViewController" title="Log View Controller" id="ekP-NH-UjU" customClass="LogViewController" customModule="VoiceChat_With_Local_Recording" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WvU-Rl-wN2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hL8-1K-jX4">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ekP-NH-UjU" id="fvx-7Z-cUb"/>
-                                    <outlet property="delegate" destination="ekP-NH-UjU" id="NvB-eT-T49"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="lrz-MM-qNI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="hL8-1K-jX4" firstAttribute="top" secondItem="lrz-MM-qNI" secondAttribute="top" id="0f1-nU-dlP"/>
-                            <constraint firstItem="lrz-MM-qNI" firstAttribute="trailing" secondItem="hL8-1K-jX4" secondAttribute="trailing" id="QL4-aT-z3S"/>
-                            <constraint firstItem="lrz-MM-qNI" firstAttribute="bottom" secondItem="hL8-1K-jX4" secondAttribute="bottom" id="Syc-LV-aMI"/>
-                            <constraint firstItem="hL8-1K-jX4" firstAttribute="leading" secondItem="lrz-MM-qNI" secondAttribute="leading" id="e6R-Ot-psX"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nif-Rn-0tq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1122" y="226"/>
         </scene>
         <!--Entry View Controller-->
         <scene sceneID="x72-3b-GCg">

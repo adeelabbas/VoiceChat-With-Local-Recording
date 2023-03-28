@@ -69,29 +69,3 @@ class LogUtils {
         try? FileManager.default.removeItem(at: URL(fileURLWithPath: LogUtils.logFolder(), isDirectory: true))
     }
 }
-
-class LogViewController: AGViewController {
-    
-}
-
-extension LogViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return LogUtils.logs.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "logCell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-        }
-        let logitem = LogUtils.logs[indexPath.row]
-        cell?.textLabel?.font = UIFont.systemFont(ofSize: 12)
-        cell?.textLabel?.numberOfLines = 0;
-        cell?.textLabel?.lineBreakMode = .byWordWrapping;
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        cell?.textLabel?.text = "\(dateFormatterPrint.string(from: logitem.dateTime)) - \(logitem.level.description): \(logitem.message)"
-        return cell!
-    }
-}

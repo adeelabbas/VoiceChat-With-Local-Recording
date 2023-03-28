@@ -20,12 +20,6 @@ class BaseViewController: AGViewController {
         LogUtils.removeAll()
     }
     
-    @objc func showLog() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "LogViewController")
-        self.present(newViewController, animated: true, completion: nil)
-    }
-    
     func showAlert(title: String? = nil, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
