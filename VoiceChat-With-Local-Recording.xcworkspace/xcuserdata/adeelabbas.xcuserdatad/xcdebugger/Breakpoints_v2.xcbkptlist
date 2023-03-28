@@ -98,6 +98,38 @@
             endingLineNumber = "31"
             landmarkName = "doJoinPressed(sender:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AB068415-4B6C-417C-A202-08C532F47C94 - 3121525b9c6fc7e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.doJoinPressed(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "AB068415-4B6C-417C-A202-08C532F47C94 - 3121525b9c6fc786"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.EntryViewController.doJoinPressed(sender: __C.UIButton) -&gt; ()"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/Common/EntryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -219,7 +219,9 @@ class JoinChannelAudioMain: BaseViewController {
         
         self.audioDevice = audioDevice
         
-        audioSession.startRunning()
+        DispatchQueue(label: "Audio Session Queue").async {
+            audioSession.startRunning()
+        }
         
         guard let channelName = configs["channelName"] as? String
             else { return }
@@ -227,7 +229,7 @@ class JoinChannelAudioMain: BaseViewController {
         // set up agora instance when view loaded
         let config = AgoraRtcEngineConfig()
         config.appId = KeyCenter.AppId
-        config.areaCode = GlobalSettings.shared.area
+        config.areaCode = .global
         config.channelProfile = .communication
         // set audio scenario
         config.audioScenario = .default
@@ -235,7 +237,7 @@ class JoinChannelAudioMain: BaseViewController {
         agoraKit.setLogFile(LogUtils.sdkLogPath())
         
         // make myself a broadcaster
-        agoraKit.setClientRole(GlobalSettings.shared.getUserRole())
+        agoraKit.setClientRole(.broadcaster)
         
         // disable video module
         agoraKit.disableVideo()
@@ -272,7 +274,7 @@ class JoinChannelAudioMain: BaseViewController {
         let option = AgoraRtcChannelMediaOptions()
         option.publishCameraTrack = false
         option.publishMicrophoneTrack = true
-        option.clientRoleType = GlobalSettings.shared.getUserRole()
+        option.clientRoleType = .broadcaster
         
         let result = agoraKit.joinChannel(byToken: KeyCenter.Token, channelId: channelName, uid: 0, mediaOptions: option)
         if result != 0 {
