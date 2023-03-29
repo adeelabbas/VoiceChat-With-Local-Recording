@@ -19,6 +19,27 @@ class AudioDevice : NSObject {
         audioDataOutput.setSampleBufferDelegate(audioSampleBufferDelegate, queue: audioQueue)
     }
     
+    static func setupAudioSession() {
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        let category = audioSession.category
+        let mode = audioSession.mode
+                
+        if audioSession.category != .playAndRecord || audioSession.mode != .videoChat {
+            do {
+                let options: AVAudioSession.CategoryOptions = [.defaultToSpeaker, .allowBluetooth]
+                try audioSession.setCategory(.playAndRecord, mode: .videoChat, options: options)
+                try audioSession.setPrefersNoInterruptionsFromSystemAlerts(true)
+                try audioSession.setPreferredSampleRate(Double(44100))
+                try audioSession.setActive(true)
+                
+                log.info("Changing audio mode/category from \(mode.rawValue)/\(category.rawValue) to videoChat/playAndRecord")
+            } catch {
+                log.error("error while calling setupAudioSession")
+            }
+        }
+    }
+    
     func configureAudio() -> Bool {
         
         guard let captureSession = self.captureSession else {

@@ -157,34 +157,8 @@ class JoinChannelAudioMain: BaseViewController {
     }
     // -- Audio recording
     
-    // -- Audio Muting
-    var audioMuted = true // Initial toggle will make it false
-    func ToggleAudioMuted() {
-        self.audioMuted = !self.audioMuted
-        agoraKit.muteLocalAudioStream(self.audioMuted)
-        agoraKit.muteRecordingSignal(self.audioMuted)
-        
-        if self.audioMuted {
-            audioMuteButton.title = "unmute"
-            audioMuteButton.backgroundColor = .lightGray
-        } else {
-            audioMuteButton.title = "mute"
-            audioMuteButton.backgroundColor = .white
-        }
-    }
-    @IBOutlet weak var audioMuteButton: UIButton!
-    @IBAction func audioMuteButtonPressed(_ sender: Any) {
-        ToggleAudioMuted()
-    }
-    // -- Audio Muting
-
     var agoraKit: AgoraRtcEngineKit!
     @IBOutlet weak var container: AGEVideoContainer!
-    @IBOutlet weak var recordingVolumeSlider: UISlider!
-    @IBOutlet weak var playbackVolumeSlider: UISlider!
-    @IBOutlet weak var inEarMonitoringSwitch: UISwitch!
-    @IBOutlet weak var inEarMonitoringVolumeSlider: UISlider!
-    @IBOutlet weak var scenarioBtn: UIButton! // Delete
         
     var audioViews: [UInt:VideoView] = [:]
     
@@ -212,79 +186,70 @@ class JoinChannelAudioMain: BaseViewController {
         
         self.audioDevice = audioDevice
         
+        AudioDevice.setupAudioSession()
+        
         DispatchQueue(label: "Audio Session Queue").async {
             audioSession.startRunning()
-        }
-        
-        guard let channelName = configs["channelName"] as? String
-            else { return }
 
-        // set up agora instance when view loaded
-        let config = AgoraRtcEngineConfig()
-        config.appId = KeyCenter.AppId
-        config.areaCode = .global
-        config.channelProfile = .communication
-        // set audio scenario
-        config.audioScenario = .default
-        agoraKit = AgoraRtcEngineKit.sharedEngine(with: config, delegate: self)
-        agoraKit.setLogFile(LogUtils.sdkLogPath())
-        
-        // make myself a broadcaster
-        agoraKit.setClientRole(.broadcaster)
-        
-        // disable video module
-        agoraKit.disableVideo()
-        
-        agoraKit.enableAudio()
-        
-        // set audio profile
-        agoraKit.setAudioProfile(.default)
-        
-        // Set audio route to speaker
-        agoraKit.setDefaultAudioRouteToSpeakerphone(true)
-        
-        // enable volume indicator
-        agoraKit.enableAudioVolumeIndication(200, smooth: 3, reportVad: true)
-        
-        recordingVolumeSlider.maximumValue = 400
-        recordingVolumeSlider.minimumValue = 0
-        recordingVolumeSlider.integerValue = 100
-        
-        playbackVolumeSlider.maximumValue = 400
-        playbackVolumeSlider.minimumValue = 0
-        playbackVolumeSlider.integerValue = 100
-        
-        inEarMonitoringVolumeSlider.maximumValue = 100
-        inEarMonitoringVolumeSlider.minimumValue = 0
-        inEarMonitoringVolumeSlider.integerValue = 100
-        
-        // start joining channel
-        // 1. Users can only see each other after they join the
-        // same channel successfully using the same app id.
-        // 2. If app certificate is turned on at dashboard, token is needed
-        // when joining channel. The channel name and uid used to calculate
-        // the token has to match the ones used for channel join
-        let option = AgoraRtcChannelMediaOptions()
-        option.publishCameraTrack = false
-        option.publishMicrophoneTrack = true
-        option.clientRoleType = .broadcaster
-        
-        let result = agoraKit.joinChannel(byToken: KeyCenter.Token, channelId: channelName, uid: 0, mediaOptions: option)
-        if result != 0 {
-            // Usually happens with invalid parameters
-            // Error code description can be found at:
-            // en: https://docs.agora.io/en/Voice/API%20Reference/oc/Constants/AgoraErrorCode.html
-            // cn: https://docs.agora.io/cn/Voice/API%20Reference/oc/Constants/AgoraErrorCode.html
-            self.showAlert(title: "Error", message: "joinChannel call failed: \(result), please check your params")
+            guard let channelName = self.configs["channelName"] as? String
+                else { return }
+
+            // set up agora instance when view loaded
+            let config = AgoraRtcEngineConfig()
+            config.appId = KeyCenter.AppId
+            config.areaCode = .global
+            config.channelProfile = .communication
+            // set audio scenario
+            config.audioScenario = .default
+            self.agoraKit = AgoraRtcEngineKit.sharedEngine(with: config, delegate: self)
+            self.agoraKit.setLogFile(LogUtils.sdkLogPath())
+            
+            // make myself a broadcaster
+            self.agoraKit.setClientRole(.broadcaster)
+            
+            // disable video module
+            self.agoraKit.disableVideo()
+            
+            self.agoraKit.enableAudio()
+            
+            // set audio profile, scenario and restriction
+            self.agoraKit.setAudioProfile(.default)
+            self.agoraKit.setAudioScenario(.default)
+            self.agoraKit.setAudioSessionOperationRestriction(.all)
+            
+            // Set audio route to speaker
+            self.agoraKit.setDefaultAudioRouteToSpeakerphone(true)
+            
+            // enable volume indicator
+//            self.agoraKit.enableAudioVolumeIndication(200, smooth: 3, reportVad: true)
+            
+            // start joining channel
+            // 1. Users can only see each other after they join the
+            // same channel successfully using the same app id.
+            // 2. If app certificate is turned on at dashboard, token is needed
+            // when joining channel. The channel name and uid used to calculate
+            // the token has to match the ones used for channel join
+            let option = AgoraRtcChannelMediaOptions()
+            option.publishCameraTrack = false
+            option.publishMicrophoneTrack = true
+            option.clientRoleType = .broadcaster
+            
+            let result = self.agoraKit.joinChannel(byToken: KeyCenter.Token, channelId: channelName, uid: 0, mediaOptions: option)
+            if result != 0 {
+                // Usually happens with invalid parameters
+                // Error code description can be found at:
+                // en: https://docs.agora.io/en/Voice/API%20Reference/oc/Constants/AgoraErrorCode.html
+                // cn: https://docs.agora.io/cn/Voice/API%20Reference/oc/Constants/AgoraErrorCode.html
+                self.showAlert(title: "Error", message: "joinChannel call failed: \(result), please check your params")
+            }
+            
+            self.ToggleAudioIsRecorded(firsttime: true)
         }
-        
-        ToggleAudioMuted()
-        ToggleAudioIsRecorded(firsttime: true)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // 关闭耳返
+        
         agoraKit.enable(inEarMonitoring: false)
         agoraKit.disableAudio()
         agoraKit.disableVideo()
@@ -297,44 +262,6 @@ class JoinChannelAudioMain: BaseViewController {
     
     func sortedViews() -> [VideoView] {
         return Array(audioViews.values).sorted(by: { $0.uid < $1.uid })
-    }
-    @IBAction func setAudioScenario(_ sender: Any) {
-        let alert = UIAlertController(title: "Set Audio Scenario".localized, message: nil, preferredStyle: UIDevice.current.userInterfaceIdiom == .pad ? UIAlertController.Style.alert : UIAlertController.Style.actionSheet)
-        for scenario in AgoraAudioScenario.allValues(){
-            alert.addAction(getAudioScenarioAction(scenario))
-        }
-        alert.addCancelAction()
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func getAudioScenarioAction(_ scenario:AgoraAudioScenario) -> UIAlertAction{
-        return UIAlertAction(title: "\(scenario.description())", style: .default, handler: {[unowned self] action in
-            self.agoraKit.setAudioScenario(scenario)
-            self.scenarioBtn.setTitle("\(scenario.description())", for: .normal)
-        })
-    }
-    
-    @IBAction func onChangeRecordingVolume(_ sender:UISlider){
-        let value:Int = Int(sender.value)
-        print("adjustRecordingSignalVolume \(value)")
-        agoraKit.adjustRecordingSignalVolume(value)
-    }
-    
-    @IBAction func onChangePlaybackVolume(_ sender:UISlider){
-        let value:Int = Int(sender.value)
-        print("adjustPlaybackSignalVolume \(value)")
-        agoraKit.adjustPlaybackSignalVolume(value)
-    }
-    
-    @IBAction func toggleInEarMonitoring(_ sender:UISwitch){
-        inEarMonitoringVolumeSlider.isEnabled = sender.isOn
-        agoraKit.enable(inEarMonitoring: sender.isOn)
-    }
-    
-    @IBAction func onChangeInEarMonitoringVolume(_ sender:UISlider){
-        let value:Int = Int(sender.value)
-        print("setInEarMonitoringVolume \(value)")
-        agoraKit.setInEarMonitoringVolume(value)
     }
 }
 

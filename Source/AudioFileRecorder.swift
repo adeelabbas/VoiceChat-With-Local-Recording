@@ -26,7 +26,7 @@ class AudioFileRecorder {
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: Int(44100),
             AVEncoderBitRateKey: Int(128000),
-            AVNumberOfChannelsKey: Int(2),
+            AVNumberOfChannelsKey: Int(1),
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
         ]
         
@@ -51,6 +51,7 @@ class AudioFileRecorder {
         if assetWriter.status == .writing {
             
             assetWriter.finishWriting {
+                log.info("Wrote \(assetWriter.outputURL.absoluteString)")
                 if let finishedHandler = finishedHandler {
                     finishedHandler(assetWriter.outputURL)
                 }
