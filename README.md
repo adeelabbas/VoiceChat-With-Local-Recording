@@ -3,11 +3,11 @@
 ### Overview
 We are experiencing a local audio recording issue on iPhone 14 for a voice conferencing application. We think the problem might be related to hardware echo cancellation on the iPhone 14 - when it's speaker is open, the audio captured by device has audible artifacts. Following two facts are useful for debugging this issue:
 - There is no audio problem on iPhone 13 and older devices.
-- There is no audio problem When iPhone 14 device is the only device in the call - the problem happens when another device joins call.
+- There is no audio problem when iPhone 14 device is the only device in the call; the problem happens when another device joins the same call as iPhone-14.
 
 ### How to Reproduce Problem
 
-- Run the following command to clone source code:
+- Run the following command to clone source code in this repository:
 ```bash
 git clone git@github.com:adeelabbas/VoiceChat-With-Local-Recording.git
 ```
@@ -16,7 +16,7 @@ git clone git@github.com:adeelabbas/VoiceChat-With-Local-Recording.git
 cd VoiceChat-With-Local-Recording
 pod install
 ```
-- Please email [me](adeel@roll.ai) for `AppId` and `Certificate` - enter them in [Source/Common/KeyCenter.swift](https://github.com/adeelabbas/VoiceChat-With-Local-Recording/blob/main/Source/Common/KeyCenter.swift).
+- Please email [me](mailto:adeel@roll.ai) for `AppId` and `Certificate` - enter them in [Source/Common/KeyCenter.swift](https://github.com/adeelabbas/VoiceChat-With-Local-Recording/blob/main/Source/Common/KeyCenter.swift).
 - Run app on two devices - one on iPhone-14 and the other on iPhone-13 (or older).
 - Tap `Join` on iPhone-13 (a default channel is automatically entered), then tap `start recording`.
 - To minimize echo, take iPhone-14 in another room. Tap `Join`, then `start recording`.
