@@ -1,7 +1,7 @@
 ## Local audio recording bug on iPhone 14 for voice-conferencing applications
 
 ### Overview
-We are experiencing a local audio recording issue on iPhone 14 when for voice conferencing application. There is no problem on iPhone 13 and older devices. Also interesting to note is that when an iPhone 14 device is the only device in the call, the problem does not happen. We think the problem might be related to hardware echo cancellation on the iPhone 14 - when it's speaker is open, the audio captured by device has audible artifacts.
+We are experiencing a local audio recording issue on iPhone 14 for a voice conferencing application. There is no problem on iPhone 13 and older devices. Also interesting to note is that when an iPhone 14 device is the only device in the call, the problem does not happen. We think the problem might be related to hardware echo cancellation on the iPhone 14 - when it's speaker is open, the audio captured by device has audible artifacts.
 
 ### How to Reproduce Problem
 
