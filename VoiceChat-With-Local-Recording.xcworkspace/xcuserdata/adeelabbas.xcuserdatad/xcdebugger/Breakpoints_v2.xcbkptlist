@@ -201,8 +201,8 @@
             filePath = "Source/AudioFileRecorder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "recordAudioSample(sampleBuffer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -217,8 +217,8 @@
             filePath = "Source/AudioFileRecorder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "stopRecording(finishedHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -233,8 +233,8 @@
             filePath = "Source/AudioFileRecorder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "stopRecording(finishedHandler:)"
             landmarkType = "7">
             <Locations>
@@ -281,28 +281,28 @@
             filePath = "Source/AudioFileRecorder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "stopRecording(finishedHandler:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1A6287DE-E177-4F4C-9105-E590FAEF6A4B - 1cdad1f875a3d5d"
+                  uuid = "1A6287DE-E177-4F4C-9105-E590FAEF6A4B - c39380b41e8b806a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "VoiceChat_With_Local_Recording.AudioFileRecorder.stopRecording(finishedHandler: Swift.Optional&lt;(Foundation.URL) -&gt; ()&gt;) -&gt; ()"
+                  symbolName = "closure #1 () -&gt; () in VoiceChat_With_Local_Recording.AudioFileRecorder.stopRecording(finishedHandler: Swift.Optional&lt;(Foundation.URL) -&gt; ()&gt;) -&gt; ()"
                   moduleName = "VoiceChat-With-Local-Recording"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/AudioFileRecorder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "592">
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1152">
                </Location>
                <Location
-                  uuid = "1A6287DE-E177-4F4C-9105-E590FAEF6A4B - 1cdad1f875a3d3e"
+                  uuid = "1A6287DE-E177-4F4C-9105-E590FAEF6A4B - 1cdad1f875a3cf8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -312,8 +312,8 @@
                   urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/AudioFileRecorder.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
                   offsetFromSymbolStart = "592">
                </Location>
             </Locations>
@@ -329,8 +329,8 @@
             filePath = "Source/AudioFileRecorder.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "stopRecording(finishedHandler:)"
             landmarkType = "7">
             <Locations>
@@ -407,8 +407,8 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
             landmarkName = "onEarMonitoringAudioFrame(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -423,8 +423,8 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "312"
-            endingLineNumber = "312"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
             landmarkName = "getEarMonitoringAudioParams()"
             landmarkType = "7">
          </BreakpointContent>
@@ -439,8 +439,8 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "346"
+            endingLineNumber = "346"
             landmarkName = "getMixedAudioParams()"
             landmarkType = "7">
          </BreakpointContent>
@@ -455,8 +455,8 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "320"
-            endingLineNumber = "320"
+            startingLineNumber = "350"
+            endingLineNumber = "350"
             landmarkName = "getRecordAudioParams()"
             landmarkType = "7">
             <Locations>
@@ -497,14 +497,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8BDD4883-D06D-4D5D-8346-EFA92EF7B21B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
             landmarkName = "getPlaybackAudioParams()"
             landmarkType = "7">
             <Locations>
@@ -538,6 +538,21 @@
                   endingLineNumber = "329"
                   offsetFromSymbolStart = "28">
                </Location>
+               <Location
+                  uuid = "8BDD4883-D06D-4D5D-8346-EFA92EF7B21B - 301199c8f5f58b5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.getPlaybackAudioParams() -&gt; __C.AgoraAudioParams"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "359"
+                  endingLineNumber = "359"
+                  offsetFromSymbolStart = "28">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -545,14 +560,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "72457119-9B8E-4C33-9FDC-20B8DFE58F53"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
             landmarkName = "onRecordAudioFrame(_:channelId:)"
             landmarkType = "7">
             <Locations>
@@ -586,6 +601,21 @@
                   endingLineNumber = "333"
                   offsetFromSymbolStart = "48">
                </Location>
+               <Location
+                  uuid = "72457119-9B8E-4C33-9FDC-20B8DFE58F53 - 7e741df5d8ae0c42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onRecordAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "363"
+                  endingLineNumber = "363"
+                  offsetFromSymbolStart = "48">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -599,25 +629,9 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "getObservedAudioFramePosition()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D65ACE90-9FC7-4231-BF7F-DD0BD31DA12A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Source/JoinChannelAudio.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
-            landmarkName = "onRecord(_:channelId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -631,10 +645,57 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348"
+            startingLineNumber = "445"
+            endingLineNumber = "445"
             landmarkName = "onPlaybackAudioFrame(_:channelId:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B66BB844-B52B-45F9-9F83-ABE7F3BF30A4 - c65bd53d0727161e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onPlaybackAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "441"
+                  endingLineNumber = "441"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "B66BB844-B52B-45F9-9F83-ABE7F3BF30A4 - c65bd53d072716ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onPlaybackAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "440"
+                  endingLineNumber = "440"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "B66BB844-B52B-45F9-9F83-ABE7F3BF30A4 - c65bd53d072716d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onPlaybackAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "439"
+                  endingLineNumber = "439"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -647,10 +708,57 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
             landmarkName = "onMixedAudioFrame(_:channelId:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "28724D12-7663-4638-BC93-4E6A68EBDA7E - 8e569d404014274"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onMixedAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "445"
+                  endingLineNumber = "445"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "28724D12-7663-4638-BC93-4E6A68EBDA7E - 8e569d404014595"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onMixedAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "444"
+                  endingLineNumber = "444"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "28724D12-7663-4638-BC93-4E6A68EBDA7E - 8e569d4040145aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onMixedAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "443"
+                  endingLineNumber = "443"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -663,10 +771,183 @@
             filePath = "Source/JoinChannelAudio.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
+            startingLineNumber = "453"
+            endingLineNumber = "453"
             landmarkName = "onPlaybackAudioFrame(beforeMixing:channelId:uid:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F89F61C3-EA4A-41E9-B8E3-A5DB0721C89F - 601f755e57505454"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onPlaybackAudioFrame(beforeMixing: __C.AgoraAudioFrame, channelId: Swift.String, uid: Swift.UInt) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "449"
+                  endingLineNumber = "449"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "F89F61C3-EA4A-41E9-B8E3-A5DB0721C89F - 601f755e575054b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onPlaybackAudioFrame(beforeMixing: __C.AgoraAudioFrame, channelId: Swift.String, uid: Swift.UInt) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "448"
+                  endingLineNumber = "448"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "F89F61C3-EA4A-41E9-B8E3-A5DB0721C89F - 601f755e57505492"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onPlaybackAudioFrame(beforeMixing: __C.AgoraAudioFrame, channelId: Swift.String, uid: Swift.UInt) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "447"
+                  endingLineNumber = "447"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2793900-5A96-426B-B17C-B9B0AE56E9AE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/JoinChannelAudio.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "startAppleLocalRecording(recordedFilePath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E4ADD2A-0075-4203-988B-0EE972927C26"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/JoinChannelAudio.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "stopAppleLocalRecording()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9EFB263-7273-4F04-ACB0-515D693FCA56"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/JoinChannelAudio.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
+            landmarkName = "onRecordAudioFrame(_:channelId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7ECBC09D-9BFA-444E-8C54-3E924F82D021"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Source/JoinChannelAudio.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
+            landmarkName = "onRecordAudioFrame(_:channelId:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7ECBC09D-9BFA-444E-8C54-3E924F82D021 - 7e741df5d8ae0fba"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onRecordAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "371"
+                  endingLineNumber = "371"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "7ECBC09D-9BFA-444E-8C54-3E924F82D021 - 7e741df5d8ae0f5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onRecordAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "370"
+                  endingLineNumber = "370"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "7ECBC09D-9BFA-444E-8C54-3E924F82D021 - 7e741df5d8ae0f78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onRecordAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "369"
+                  endingLineNumber = "369"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "7ECBC09D-9BFA-444E-8C54-3E924F82D021 - 7e741df5d8ae0f3e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VoiceChat_With_Local_Recording.JoinChannelAudioMain.onRecordAudioFrame(_: __C.AgoraAudioFrame, channelId: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "VoiceChat-With-Local-Recording"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adeelabbas/roll/audio/VoiceChat-With-Local-Recording/Source/JoinChannelAudio.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "367"
+                  endingLineNumber = "367"
+                  offsetFromSymbolStart = "220">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

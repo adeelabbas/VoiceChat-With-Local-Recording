@@ -94,6 +94,37 @@ class JoinChannelAudioMain: BaseViewController {
     }
     
     // -- Apple local recording
+    var appleAudioFilePath = ""
+    var appleAudioFileRecorder : AudioFileRecorder?
+    func startAppleLocalRecording(recordedFilePath: String) {
+        
+        // Check if file already exists
+        if fileExists(file: recordedFilePath) {
+            log.info("deleted file at \(recordedFilePath)")
+            _ = deleteFile(filePath: recordedFilePath)
+        }
+
+        self.appleAudioFilePath = recordedFilePath
+        
+        self.appleAudioFileRecorder = AudioFileRecorder()
+        if let appleAudioFileRecorder = self.appleAudioFileRecorder {
+            _ = appleAudioFileRecorder.startRecording(fromFilePath: recordedFilePath)
+        }
+    }
+    
+    func stopAppleLocalRecording() {
+
+        if let appleAudioFileRecorder = self.appleAudioFileRecorder {
+            appleAudioFileRecorder.stopRecording()
+        }
+
+        if !fileExists(file: self.appleAudioFilePath) {
+            alertBox(title: "File was not recorded", message: self.appleAudioFilePath)
+        }
+        
+        self.appleAudioFilePath = ""
+        self.appleAudioFileRecorder = nil
+    }
     
     // -- Audio recording
     var audioIsRecorded = true // Initial toggle will make it false
@@ -102,11 +133,10 @@ class JoinChannelAudioMain: BaseViewController {
         
         if !firsttime {
             if audioIsRecorded {
-                let audioFilePath = getAudioFilePath(audioFileExtension: "m4a")
-                // start recording
+                self.startAppleLocalRecording(recordedFilePath: getAudioFilePath(audioFileExtension: "wav" ))
                 
             } else {
-                // stop recording
+                self.stopAppleLocalRecording()
             }
         }
         
@@ -318,8 +348,8 @@ extension JoinChannelAudioMain: AgoraAudioFrameDelegate {
     
     func getRecordAudioParams() -> AgoraAudioParams {
         let agoraAudioParams = AgoraAudioParams()
-        agoraAudioParams.channel = 1
-        agoraAudioParams.sampleRate = 16000
+        agoraAudioParams.channel = DefaultAudioNumberOfChannels
+        agoraAudioParams.sampleRate = DefaultAudioSampleRate
         agoraAudioParams.mode = .readOnly
         agoraAudioParams.samplesPerCall = 1024
         return agoraAudioParams
@@ -331,7 +361,74 @@ extension JoinChannelAudioMain: AgoraAudioFrameDelegate {
 
     func onRecordAudioFrame(_ frame: AgoraAudioFrame, channelId: String) -> Bool {
         if audioIsRecorded {
+            
             // Handle recording
+            let audioDataSize: Int = frame.samplesPerChannel * frame.bytesPerSample
+
+            var asbd = AudioStreamBasicDescription(
+                mSampleRate: Float64(DefaultAudioSampleRate),
+                mFormatID: kAudioFormatLinearPCM,
+                mFormatFlags: kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsNonInterleaved,
+                mBytesPerPacket: 2,
+                mFramesPerPacket: 1,
+                mBytesPerFrame: 2,
+                mChannelsPerFrame: 1,
+                mBitsPerChannel: 16,
+                mReserved: 0
+            )
+
+            var audioFormatDescription: CMAudioFormatDescription?
+            var status = CMAudioFormatDescriptionCreate(allocator: kCFAllocatorDefault,
+                                                        asbd: &asbd,
+                                                        layoutSize: 0,
+                                                        layout: nil,
+                                                        magicCookieSize: 0,
+                                                        magicCookie: nil,
+                                                        extensions: nil,
+                                                        formatDescriptionOut: &audioFormatDescription)
+            assert(status == noErr)
+            
+            var blockBuffer: CMBlockBuffer?
+            status = CMBlockBufferCreateWithMemoryBlock(
+                allocator: kCFAllocatorDefault,
+                memoryBlock: frame.buffer,
+                blockLength: audioDataSize,
+                blockAllocator: kCFAllocatorNull,
+                customBlockSource: nil,
+                offsetToData: 0,
+                dataLength: audioDataSize,
+                flags: 0,
+                blockBufferOut: &blockBuffer
+            )
+            assert(status == kCMBlockBufferNoErr)
+            
+            guard let blockBuffer = blockBuffer else {
+                return false
+            }
+
+            if status == kCMBlockBufferNoErr {
+                var sampleBuffer: CMSampleBuffer?
+                
+                status = CMAudioSampleBufferCreateReadyWithPacketDescriptions(
+                    allocator: kCFAllocatorDefault,
+                    dataBuffer: blockBuffer,      // dataBuffer
+                    formatDescription: audioFormatDescription!,
+                    sampleCount: audioDataSize,    // numSamples
+                    presentationTimeStamp: CMTimeMakeWithSeconds(Double(frame.renderTimeMs) / 1000, preferredTimescale: Int32(DefaultAudioSampleRate)),    // sbufPTS
+                    packetDescriptions: nil,        // packetDescriptions
+                    sampleBufferOut: &sampleBuffer
+                )
+                assert(status == noErr)
+
+                guard let sampleBuffer = sampleBuffer else {
+                    log.error("sampleBuffer is nil")
+                    return false
+                }
+                
+                _ = appleAudioFileRecorder?.recordAudioSample(sampleBuffer: sampleBuffer)
+            } else {
+                log.error("Error in CMBlockBufferCreateWithMemoryBlock")
+            }
         }
         return true
     }
