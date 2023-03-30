@@ -108,6 +108,16 @@
                                     <action selector="audioRecordButtonPressed:" destination="jxp-ZN-2yG" eventType="touchUpInside" id="Yyo-Ou-4ER"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpg-mD-wAm">
+                                <rect key="frame" x="171" y="596" width="69" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="Crash"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Crash"/>
+                                <connections>
+                                    <action selector="CrashButton:" destination="jxp-ZN-2yG" eventType="touchUpInside" id="T3G-pA-ZM0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CeS-QQ-Djo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

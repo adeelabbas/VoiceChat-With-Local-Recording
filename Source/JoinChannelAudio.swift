@@ -64,6 +64,9 @@ class JoinChannelAudioEntry : UIViewController
         log.showDateTime = false
         log.showFunctionName = false
     }
+    @IBAction func CrashButton(_ sender: Any) {
+        fatalError()
+    }
     
     @IBAction func doJoinPressed(sender: AGButton) {
         guard let channelName = channelTextField.text else {return}

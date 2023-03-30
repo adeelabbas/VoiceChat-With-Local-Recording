@@ -4,7 +4,7 @@ import Speech
 ///
 /// --- AudioFileRecorder
 ///
-let DefaultAudioSampleRate = 24000
+let DefaultAudioSampleRate = 16000
 let DefaultAudioNumberOfChannels = 1
 
 class AudioFileRecorder {
