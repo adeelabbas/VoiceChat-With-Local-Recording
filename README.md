@@ -11,7 +11,7 @@ We are experiencing a local audio recording issue on iPhone 14 when for voice co
 - Take iPhone-14 to another room - to minimize echo since both devices will be in the same call - tap `Join`, then `start recording`
 - Speak some words in the iPhone-14 - record for 30 seconds. Then, tap `stop recording` on both devices
 - Connect iPhone 14 to Mac computer and open Finder app. Click on the icon showing iPhone-14 name on left panel and navigate to `Files` tab. Then click on `>` symbol next to  `VoiceChat-With-Local-Recording`. 
-![](Media/Finder.png "Downloading file from Finder app")
+![](Media/Finder.png "Downloading from Finder app")
 - There will be an audio file with `m4a` extension - drag and drop it to your local directory and play. Audio will have artifacts. [Here](https://www.dropbox.com/s/lpxw2fh0o7ojq60/Sample-audio.m4a?dl=0) is a sample audio with the artifacts (this file is also available in this repo at [Media/Sample-audio.m4a](https://github.com/adeelabbas/VoiceChat-With-Local-Recording/blob/main/Media/sample-audio.m4a)).
 
 
