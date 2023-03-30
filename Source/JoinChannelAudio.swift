@@ -94,38 +94,6 @@ class JoinChannelAudioMain: BaseViewController {
     }
     
     // -- Apple local recording
-
-    var appleAudioFilePath = ""
-    var appleAudioFileRecorder : AudioFileRecorder?
-    func startAppleLocalRecording(recordedFilePath: String) {
-        
-        // Check if file already exists
-        if fileExists(file: recordedFilePath) {
-            log.info("deleted file at \(recordedFilePath)")
-            _ = deleteFile(filePath: recordedFilePath)
-        }
-
-        self.appleAudioFilePath = recordedFilePath
-        
-        self.appleAudioFileRecorder = AudioFileRecorder()
-        if let appleAudioFileRecorder = self.appleAudioFileRecorder {
-            _ = appleAudioFileRecorder.startRecording(fromFilePath: recordedFilePath)
-        }
-    }
-    
-    func stopAppleLocalRecording() {
-
-        if let appleAudioFileRecorder = self.appleAudioFileRecorder {
-            appleAudioFileRecorder.stopRecording()
-        }
-
-        if !fileExists(file: self.appleAudioFilePath) {
-            alertBox(title: "File was not recorded", message: self.appleAudioFilePath)
-        }
-        
-        self.appleAudioFilePath = ""
-        self.appleAudioFileRecorder = nil
-    }
     
     // -- Audio recording
     var audioIsRecorded = true // Initial toggle will make it false
@@ -134,13 +102,12 @@ class JoinChannelAudioMain: BaseViewController {
         
         if !firsttime {
             if audioIsRecorded {
-                self.startAppleLocalRecording(recordedFilePath: getAudioFilePath(audioFileExtension: "m4a" ))
+                let audioFilePath = getAudioFilePath(audioFileExtension: "m4a")
+                // start recording
                 
             } else {
-                self.stopAppleLocalRecording()
+                // stop recording
             }
-            
-            
         }
         
         if self.audioIsRecorded {
@@ -165,31 +132,10 @@ class JoinChannelAudioMain: BaseViewController {
     // indicate if current instance has joined channel
     var isJoined: Bool = false
 
-    private var audioDevice : AudioDevice?
-
     override func viewDidLoad(){
         super.viewDidLoad()
-        
-        let audioSession = AVCaptureSession()
-        let audioDevice = AudioDevice(captureSession: audioSession, audioSampleBufferDelegate: self)
-        // Configure audio session
-        
-        // NOTE: If we uncomment following line, there is a lot of echo because the audio session does not have echo cancellation
-//        audioSession.usesApplicationAudioSession = false
-        
-        audioSession.beginConfiguration()
-        guard audioDevice.configureAudio() else {
-            log.error("audioDevice.configureAudio failed")
-            return
-        }
-        audioSession.commitConfiguration()
-        
-        self.audioDevice = audioDevice
-        
-        AudioDevice.setupAudioSession()
-        
+                
         DispatchQueue(label: "Audio Session Queue").async {
-            audioSession.startRunning()
 
             guard let channelName = self.configs["channelName"] as? String
                 else { return }
@@ -215,7 +161,7 @@ class JoinChannelAudioMain: BaseViewController {
             // set audio profile, scenario and restriction
             self.agoraKit.setAudioProfile(.default)
             self.agoraKit.setAudioScenario(.default)
-            self.agoraKit.setAudioSessionOperationRestriction(.all)
+            self.agoraKit.setAudioFrameDelegate(self)
             
             // Set audio route to speaker
             self.agoraKit.setDefaultAudioRouteToSpeakerphone(true)
@@ -357,16 +303,56 @@ extension JoinChannelAudioMain: AgoraRtcEngineDelegate {
     }
 }
 
-extension JoinChannelAudioMain : AVCaptureAudioDataOutputSampleBufferDelegate {
+extension JoinChannelAudioMain: AgoraAudioFrameDelegate {
+    func onEarMonitoringAudioFrame(_ frame: AgoraAudioFrame) -> Bool {
+        true
+    }
     
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+    func getEarMonitoringAudioParams() -> AgoraAudioParams {
+        AgoraAudioParams()
+    }
+    
+    func getMixedAudioParams() -> AgoraAudioParams {
+        AgoraAudioParams()
+    }
+    
+    func getRecordAudioParams() -> AgoraAudioParams {
+        let agoraAudioParams = AgoraAudioParams()
+        agoraAudioParams.channel = 1
+        agoraAudioParams.sampleRate = 16000
+        agoraAudioParams.mode = .readOnly
+        agoraAudioParams.samplesPerCall = 1024
+        return agoraAudioParams
+    }
+    
+    func getPlaybackAudioParams() -> AgoraAudioParams {
+        AgoraAudioParams()
+    }
+
+    func onRecordAudioFrame(_ frame: AgoraAudioFrame, channelId: String) -> Bool {
         if audioIsRecorded {
-            if let appleAudioFileRecorder = self.appleAudioFileRecorder {
-                guard appleAudioFileRecorder.recordAudioSample(sampleBuffer: sampleBuffer) else {
-                    log.error("Could not record audio sample")
-                    return
-                }
-            }
+            // Handle recording
         }
+        return true
+    }
+    
+    func getObservedAudioFramePosition() -> AgoraAudioFramePosition {
+        return .record
+    }
+    
+    func onRecord(_ frame: AgoraAudioFrame, channelId: String) -> Bool {
+        return true
+    }
+    
+    func onPlaybackAudioFrame(_ frame: AgoraAudioFrame, channelId: String) -> Bool {
+        return true
+    }
+    
+    func onMixedAudioFrame(_ frame: AgoraAudioFrame, channelId: String) -> Bool {
+        return true
+    }
+    
+    func onPlaybackAudioFrame(beforeMixing frame: AgoraAudioFrame, channelId: String, uid: UInt) -> Bool {
+        return true
     }
 }

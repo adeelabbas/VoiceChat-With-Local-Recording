@@ -26,8 +26,6 @@
 		A7847F942458089E00469187 /* AgoraExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7847F932458089E00469187 /* AgoraExtension.swift */; };
 		A7BD7660247CC6920062A6B3 /* UITypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BD765F247CC6920062A6B3 /* UITypeAlias.swift */; };
 		A7CA48C424553CF700507435 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CA48C224553CF600507435 /* Popover.storyboard */; };
-		C87DD55D29BA66F20009453F /* AudioFileRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87DD55B29BA66F20009453F /* AudioFileRecorder.swift */; };
-		C8D25AD129C3937000A76F9C /* AudioDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D25AD029C3937000A76F9C /* AudioDevice.swift */; };
 		E74877B728A23B8B00CA2F58 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74877B628A23B8B00CA2F58 /* NetworkManager.swift */; };
 		E74877BA28A23C1400CA2F58 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74877B928A23C1400CA2F58 /* JSONObject.swift */; };
 		E748789E28ADE03400CA2F58 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748789C28ADE03400CA2F58 /* VideoView.swift */; };
@@ -100,8 +98,6 @@
 		A7CA48C324553CF600507435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Popover.storyboard; sourceTree = "<group>"; };
 		BAA51FBBA962284FF83DC2E3 /* Pods-VoiceChat-With-Local-Recording.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceChat-With-Local-Recording.release.xcconfig"; path = "Target Support Files/Pods-VoiceChat-With-Local-Recording/Pods-VoiceChat-With-Local-Recording.release.xcconfig"; sourceTree = "<group>"; };
 		BC25C1A6D9E6B8827D095985 /* Pods_SimpleFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C87DD55B29BA66F20009453F /* AudioFileRecorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioFileRecorder.swift; sourceTree = "<group>"; };
-		C8D25AD029C3937000A76F9C /* AudioDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioDevice.swift; sourceTree = "<group>"; };
 		CC6D08A23527C200339E4FD6 /* Pods-SimpleAudioFilter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleAudioFilter.release.xcconfig"; path = "Target Support Files/Pods-SimpleAudioFilter/Pods-SimpleAudioFilter.release.xcconfig"; sourceTree = "<group>"; };
 		DC6429C4C30CF58628DE6A7A /* Pods-VoiceChat-With-Local-Recording.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceChat-With-Local-Recording.debug.xcconfig"; path = "Target Support Files/Pods-VoiceChat-With-Local-Recording/Pods-VoiceChat-With-Local-Recording.debug.xcconfig"; sourceTree = "<group>"; };
 		E74877B628A23B8B00CA2F58 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -180,8 +176,6 @@
 		03D13BCE2448758900B599B3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C8D25AD029C3937000A76F9C /* AudioDevice.swift */,
-				C87DD55B29BA66F20009453F /* AudioFileRecorder.swift */,
 				8BAEA7B426C253FC0006B0F1 /* APIExample.entitlements */,
 				03D13BD52448758900B599B3 /* Main.storyboard */,
 				A7CA48C224553CF600507435 /* Popover.storyboard */,
@@ -383,7 +377,6 @@
 				03F8733224C8696600EDB1A3 /* EntryViewController.swift in Sources */,
 				0371D8AE250B4A2C00C0DD61 /* JoinChannelAudio.swift in Sources */,
 				576EA59025AEDD3C000B3D79 /* (null) in Sources */,
-				C8D25AD129C3937000A76F9C /* AudioDevice.swift in Sources */,
 				8407E0942472320800AC5DE8 /* (null) in Sources */,
 				A7BD7660247CC6920062A6B3 /* UITypeAlias.swift in Sources */,
 				03D13C0124488F1F00B599B3 /* KeyCenter.swift in Sources */,
@@ -392,7 +385,6 @@
 				A7847F922458062900469187 /* StatisticsInfo.swift in Sources */,
 				03BCEC762449EB5000ED7177 /* LogViewController.swift in Sources */,
 				A7847F942458089E00469187 /* AgoraExtension.swift in Sources */,
-				C87DD55D29BA66F20009453F /* AudioFileRecorder.swift in Sources */,
 				E74877BA28A23C1400CA2F58 /* JSONObject.swift in Sources */,
 				03BCEC50244938C500ED7177 /* BaseViewController.swift in Sources */,
 			);
