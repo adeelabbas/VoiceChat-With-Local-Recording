@@ -1,7 +1,9 @@
 ## Local audio recording bug on iPhone 14 for voice-conferencing applications
 
 ### Overview
-We are experiencing a local audio recording issue on iPhone 14 for a voice conferencing application. There is no problem on iPhone 13 and older devices. Also interesting to note is that when an iPhone 14 device is the only device in the call, the problem does not happen. We think the problem might be related to hardware echo cancellation on the iPhone 14 - when it's speaker is open, the audio captured by device has audible artifacts.
+We are experiencing a local audio recording issue on iPhone 14 for a voice conferencing application. We think the problem might be related to hardware echo cancellation on the iPhone 14 - when it's speaker is open, the audio captured by device has audible artifacts. Following two facts are useful for debugging this issue:
+- There is no audio problem on iPhone 13 and older devices.
+- There is no audio problem When iPhone 14 device is the only device in the call - the problem happens when another device joins call.
 
 ### How to Reproduce Problem
 
@@ -25,7 +27,7 @@ pod install
 
 - There will be an audio file with `m4a` extension - copy to local directory and play. Audio will have artifacts. [Here](https://www.dropbox.com/s/lpxw2fh0o7ojq60/Sample-audio.m4a?dl=0) is a sample audio with the artifacts (sample file is also available at [Media/Sample-audio.m4a](https://github.com/adeelabbas/VoiceChat-With-Local-Recording/blob/main/Media/sample-audio.m4a)).
 - If we download the audio file that was captured on iPhone-13, it will not have any artifacts.
-
+- If we repeat the same experiment, but only with iPhone-14 (i.e. iPhone-14 is the only device in the call) - audio records fine on the iPhone-14.
 
 ### Technical Details
 - In order to implement voice conferencing, we are using Agora Voice SDK. More info about Agora API is [here](https://api-ref.agora.io/en/voice-sdk/ios/4.x/API/rtc_api_overview_ng.html).
