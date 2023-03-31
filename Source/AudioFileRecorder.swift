@@ -4,7 +4,7 @@ import Speech
 ///
 /// --- AudioFileRecorder
 ///
-let DefaultAudioSampleRate = 16000
+let DefaultAudioSampleRate = 44100
 let DefaultAudioNumberOfChannels = 1
 
 class AudioFileRecorder {
@@ -18,20 +18,32 @@ class AudioFileRecorder {
         
         let audioFileURL = URL(fileURLWithPath: fromFilePath)
                     
-        guard let assetWriter = try? AVAssetWriter(outputURL: audioFileURL, fileType: .wav) else {
+        guard let assetWriter = try? AVAssetWriter(outputURL: audioFileURL, fileType: .m4a) else {
             log.error("Unable to instantiate AudioFileRecorder")
             return false
         }
         assetWriter.movieFragmentInterval = CMTime(seconds: 6, preferredTimescale: 600)
         
         let outputSettings = [
-            AVFormatIDKey: Int(kAudioFormatLinearPCM),
+//            AVFormatIDKey: Int(kAudioFormatLinearPCM),
+//            AVSampleRateKey: Int(DefaultAudioSampleRate),
+//            AVNumberOfChannelsKey: Int(DefaultAudioNumberOfChannels),
+//            AVLinearPCMBitDepthKey: 16,
+//            AVLinearPCMIsBigEndianKey: 0,
+//            AVLinearPCMIsFloatKey: 0,
+//            AVLinearPCMIsNonInterleaved: 0,
+            
+            // Apple Lossless
+//            AVFormatIDKey: Int(kAudioFormatAppleLossless),
+//            AVSampleRateKey: Int(DefaultAudioSampleRate),
+//            AVNumberOfChannelsKey: Int(DefaultAudioNumberOfChannels),
+//            AVEncoderBitDepthHintKey: 16
+
+            // AAC or M4A
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: Int(DefaultAudioSampleRate),
             AVNumberOfChannelsKey: Int(DefaultAudioNumberOfChannels),
-            AVLinearPCMBitDepthKey: 16,
-            AVLinearPCMIsBigEndianKey: 0,
-            AVLinearPCMIsFloatKey: 0,
-            AVLinearPCMIsNonInterleaved: 0,
+            AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
         ]
         
         let assetWriterInput = AVAssetWriterInput(mediaType: .audio, outputSettings: outputSettings)

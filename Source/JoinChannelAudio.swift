@@ -136,7 +136,7 @@ class JoinChannelAudioMain: BaseViewController {
         
         if !firsttime {
             if audioIsRecorded {
-                self.startAppleLocalRecording(recordedFilePath: getAudioFilePath(audioFileExtension: "wav" ))
+                self.startAppleLocalRecording(recordedFilePath: getAudioFilePath(audioFileExtension: "m4a" ))
                 
             } else {
                 self.stopAppleLocalRecording()
