@@ -76,7 +76,71 @@ class AudioFileRecorder {
             log.error("AssetWriter is in \(assetWriter.status.rawValue) state: \(String(describing: assetWriter.error))")
         }
     }
-                
+    
+    func recordAudioFrame(samplesPerChannel: Int, bytesPerSample: Int, frameTime: Double, audioFrameBuffer: UnsafeMutableRawPointer? ) -> Bool {
+        
+        var status: OSStatus
+
+        let audioDataSize: Int = samplesPerChannel * bytesPerSample * DefaultAudioNumberOfChannels
+
+        var asbd = AudioStreamBasicDescription(
+            mSampleRate: Float64(DefaultAudioSampleRate),
+            mFormatID: kAudioFormatLinearPCM,
+            mFormatFlags: kAudioFormatFlagIsPacked | kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsNonInterleaved,
+            mBytesPerPacket: 2,
+            mFramesPerPacket: 1,
+            mBytesPerFrame: 2,
+            mChannelsPerFrame: UInt32(DefaultAudioNumberOfChannels),
+            mBitsPerChannel: 16,
+            mReserved: 0
+        )
+        
+        var audioFormatDescription: CMAudioFormatDescription?
+        status = CMAudioFormatDescriptionCreate(allocator: kCFAllocatorDefault,
+                                                asbd: &asbd,
+                                                layoutSize: 0,
+                                                layout: nil,
+                                                magicCookieSize: 0,
+                                                magicCookie: nil,
+                                                extensions: nil,
+                                                formatDescriptionOut: &audioFormatDescription)
+        assert(status == noErr)
+        
+        var blockBuffer: CMBlockBuffer?
+        status = CMBlockBufferCreateWithMemoryBlock(allocator: kCFAllocatorDefault,
+                                                    memoryBlock: audioFrameBuffer,
+                                                    blockLength: audioDataSize,
+                                                    blockAllocator: kCFAllocatorNull,
+                                                    customBlockSource: nil,
+                                                    offsetToData: 0,
+                                                    dataLength: audioDataSize,
+                                                    flags: 0,
+                                                    blockBufferOut: &blockBuffer)
+        assert(status == kCMBlockBufferNoErr)
+    
+        
+        guard let blockBuffer = blockBuffer else {
+            return false
+        }
+        
+        var sampleBuffer: CMSampleBuffer?
+        status = CMAudioSampleBufferCreateReadyWithPacketDescriptions(allocator: kCFAllocatorDefault,
+                                                                      dataBuffer: blockBuffer,      // dataBuffer
+                                                                      formatDescription: audioFormatDescription!,
+                                                                      sampleCount: audioDataSize,    // numSamples
+                                                                      presentationTimeStamp: CMTimeMakeWithSeconds(frameTime, preferredTimescale: Int32(DefaultAudioSampleRate)),    // sbufPTS
+                                                                      packetDescriptions: nil,        // packetDescriptions
+                                                                      sampleBufferOut: &sampleBuffer)
+        assert(status == noErr)
+
+        guard let sampleBuffer = sampleBuffer else {
+            log.error("sampleBuffer is nil")
+            return false
+        }
+        
+        return recordAudioSample(sampleBuffer: sampleBuffer)
+    }
+    
     func recordAudioSample(sampleBuffer: CMSampleBuffer) -> Bool {
         guard let assetWriter = self.assetWriter,
               CMSampleBufferDataIsReady(sampleBuffer),
